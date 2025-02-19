@@ -1,0 +1,33 @@
+name: NewsReader CI
+
+on:
+  push:
+    branches:
+      - main  # Runs CI/CD when code is pushed to the `main` branch
+  pull_request:
+    branches:
+      - main  # Runs on pull requests to `main`
+
+jobs:
+  build:
+    runs-on: macos-latest  # Runs on macOS
+
+    env:
+      WEATHER_API_KEY: ${{ secrets.WEATHER_API_KEY }}  # Inject API Key securely
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3  # Clones repo into the GitHub runner
+
+      - name: Select Xcode Version
+        run: sudo xcode-select -switch /Applications/Xcode.app/Contents/Developer
+
+      - name: Install Dependencies
+        run: |
+          brew install swiftlint || true  # Installs SwiftLint if missing
+          pod install || true  # Install CocoaPods (if used)
+
+      - name: Build and Test
+        run: |
+          export NEWS_API_KEY=${{ secrets.NEWS_API_KEY }}  # Set API key as env variable
+          xcodebuild test -workspace MyApp.xcworkspace -scheme MyApp -destination 'platform=iOS Simulator,name=iPhone 15 pro'

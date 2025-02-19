@@ -3,3 +3,4 @@ DerivedData/
 *.xcworkspace
 *.lock
 Pods/
+Secrets.xcconfig
