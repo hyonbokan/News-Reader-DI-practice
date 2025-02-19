@@ -12,7 +12,18 @@
 		BDB1B3FC2D65A4C000EA4AD0 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB1B3FB2D65A4C000EA4AD0 /* NewsViewController.swift */; };
 		BDB1B4012D65A4C100EA4AD0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BDB1B4002D65A4C100EA4AD0 /* Assets.xcassets */; };
 		BDB1B4042D65A4C100EA4AD0 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = BDB1B4032D65A4C100EA4AD0 /* Base */; };
+		BDB1B4152D65B05A00EA4AD0 /* NewsReaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB1B4142D65B05A00EA4AD0 /* NewsReaderTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BDB1B4162D65B05A00EA4AD0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BDB1B3EC2D65A4C000EA4AD0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BDB1B3F32D65A4C000EA4AD0;
+			remoteInfo = NewsReader;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		BDB1B3F42D65A4C000EA4AD0 /* NewsReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewsReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -22,10 +33,19 @@
 		BDB1B4002D65A4C100EA4AD0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BDB1B4032D65A4C100EA4AD0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BDB1B4052D65A4C100EA4AD0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BDB1B4122D65B05A00EA4AD0 /* NewsReaderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NewsReaderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BDB1B4142D65B05A00EA4AD0 /* NewsReaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsReaderTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		BDB1B3F12D65A4C000EA4AD0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BDB1B40F2D65B05A00EA4AD0 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -41,6 +61,7 @@
 				BDB1B40C2D65A51D00EA4AD0 /* Resources */,
 				BDB1B40B2D65A51600EA4AD0 /* AppState */,
 				BDB1B3F62D65A4C000EA4AD0 /* NewsReader */,
+				BDB1B4132D65B05A00EA4AD0 /* NewsReaderTests */,
 				BDB1B3F52D65A4C000EA4AD0 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -49,6 +70,7 @@
 			isa = PBXGroup;
 			children = (
 				BDB1B3F42D65A4C000EA4AD0 /* NewsReader.app */,
+				BDB1B4122D65B05A00EA4AD0 /* NewsReaderTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -80,6 +102,14 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		BDB1B4132D65B05A00EA4AD0 /* NewsReaderTests */ = {
+			isa = PBXGroup;
+			children = (
+				BDB1B4142D65B05A00EA4AD0 /* NewsReaderTests.swift */,
+			);
+			path = NewsReaderTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -100,6 +130,24 @@
 			productReference = BDB1B3F42D65A4C000EA4AD0 /* NewsReader.app */;
 			productType = "com.apple.product-type.application";
 		};
+		BDB1B4112D65B05A00EA4AD0 /* NewsReaderTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BDB1B41A2D65B05A00EA4AD0 /* Build configuration list for PBXNativeTarget "NewsReaderTests" */;
+			buildPhases = (
+				BDB1B40E2D65B05A00EA4AD0 /* Sources */,
+				BDB1B40F2D65B05A00EA4AD0 /* Frameworks */,
+				BDB1B4102D65B05A00EA4AD0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BDB1B4172D65B05A00EA4AD0 /* PBXTargetDependency */,
+			);
+			name = NewsReaderTests;
+			productName = NewsReaderTests;
+			productReference = BDB1B4122D65B05A00EA4AD0 /* NewsReaderTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -112,6 +160,10 @@
 				TargetAttributes = {
 					BDB1B3F32D65A4C000EA4AD0 = {
 						CreatedOnToolsVersion = 15.3;
+					};
+					BDB1B4112D65B05A00EA4AD0 = {
+						CreatedOnToolsVersion = 15.3;
+						TestTargetID = BDB1B3F32D65A4C000EA4AD0;
 					};
 				};
 			};
@@ -129,6 +181,7 @@
 			projectRoot = "";
 			targets = (
 				BDB1B3F32D65A4C000EA4AD0 /* NewsReader */,
+				BDB1B4112D65B05A00EA4AD0 /* NewsReaderTests */,
 			);
 		};
 /* End PBXProject section */
@@ -140,6 +193,13 @@
 			files = (
 				BDB1B4012D65A4C100EA4AD0 /* Assets.xcassets in Resources */,
 				BDB1B4042D65A4C100EA4AD0 /* Base in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BDB1B4102D65B05A00EA4AD0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -156,7 +216,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		BDB1B40E2D65B05A00EA4AD0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BDB1B4152D65B05A00EA4AD0 /* NewsReaderTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BDB1B4172D65B05A00EA4AD0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BDB1B3F32D65A4C000EA4AD0 /* NewsReader */;
+			targetProxy = BDB1B4162D65B05A00EA4AD0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		BDB1B4022D65A4C100EA4AD0 /* LaunchScreen.storyboard */ = {
@@ -343,6 +419,50 @@
 			};
 			name = Release;
 		};
+		BDB1B4182D65B05A00EA4AD0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = KFKP37Q73C;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				MACOSX_DEPLOYMENT_TARGET = 14.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = hyonbokan.NewsReaderTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NewsReader.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/NewsReader";
+			};
+			name = Debug;
+		};
+		BDB1B4192D65B05A00EA4AD0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = KFKP37Q73C;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				MACOSX_DEPLOYMENT_TARGET = 14.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = hyonbokan.NewsReaderTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NewsReader.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/NewsReader";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -360,6 +480,15 @@
 			buildConfigurations = (
 				BDB1B4092D65A4C100EA4AD0 /* Debug */,
 				BDB1B40A2D65A4C100EA4AD0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BDB1B41A2D65B05A00EA4AD0 /* Build configuration list for PBXNativeTarget "NewsReaderTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BDB1B4182D65B05A00EA4AD0 /* Debug */,
+				BDB1B4192D65B05A00EA4AD0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
