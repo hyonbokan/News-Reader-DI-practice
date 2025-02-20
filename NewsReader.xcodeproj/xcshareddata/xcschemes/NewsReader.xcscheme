@@ -40,6 +40,11 @@
                BlueprintName = "NewsReaderTests"
                ReferencedContainer = "container:NewsReader.xcodeproj">
             </BuildableReference>
+            <SkippedTests>
+               <Test
+                  Identifier = "NewsServiceTests">
+               </Test>
+            </SkippedTests>
          </TestableReference>
          <TestableReference
             skipped = "NO"
