@@ -13,12 +13,6 @@ class NewsViewController: UIViewController {
         super.viewDidLoad()
         
         view.backgroundColor = .systemRed
-        
-        if let apiKey = ProcessInfo.processInfo.environment["NEWS_API_KEY"], !apiKey.isEmpty {
-            print("✅ API Key Loaded: \(apiKey)")
-        } else {
-            print("❌ API Key is missing")
-        }
     }
 
 
