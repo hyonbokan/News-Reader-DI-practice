@@ -16,6 +16,8 @@
 		BD15FAE72D66C67F006E85C0 /* NewsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD15FAE62D66C67F006E85C0 /* NewsService.swift */; };
 		BD15FAF92D66F104006E85C0 /* NewsServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD15FAF72D66F104006E85C0 /* NewsServiceTests.swift */; };
 		BD15FAFB2D66F192006E85C0 /* MockNewsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD15FAF22D66EF03006E85C0 /* MockNewsService.swift */; };
+		BD91B0312D683E3700A7109F /* NewsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD91B0302D683E3700A7109F /* NewsViewModelTests.swift */; };
+		BD91B0342D683E6600A7109F /* NewsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD91B0332D683E6600A7109F /* NewsViewModel.swift */; };
 		BDB1B3F82D65A4C000EA4AD0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB1B3F72D65A4C000EA4AD0 /* AppDelegate.swift */; };
 		BDB1B3FA2D65A4C000EA4AD0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB1B3F92D65A4C000EA4AD0 /* SceneDelegate.swift */; };
 		BDB1B3FC2D65A4C000EA4AD0 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB1B3FB2D65A4C000EA4AD0 /* NewsViewController.swift */; };
@@ -72,6 +74,8 @@
 		BD15FAE62D66C67F006E85C0 /* NewsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsService.swift; sourceTree = "<group>"; };
 		BD15FAF22D66EF03006E85C0 /* MockNewsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNewsService.swift; sourceTree = "<group>"; };
 		BD15FAF72D66F104006E85C0 /* NewsServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsServiceTests.swift; sourceTree = "<group>"; };
+		BD91B0302D683E3700A7109F /* NewsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewModelTests.swift; sourceTree = "<group>"; };
+		BD91B0332D683E6600A7109F /* NewsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewModel.swift; sourceTree = "<group>"; };
 		BDB1B3F42D65A4C000EA4AD0 /* NewsReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewsReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDB1B3F72D65A4C000EA4AD0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BDB1B3F92D65A4C000EA4AD0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -178,6 +182,14 @@
 			path = Mocks;
 			sourceTree = "<group>";
 		};
+		BD91B0322D683E5C00A7109F /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				BD91B0332D683E6600A7109F /* NewsViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		BDB1B3EB2D65A4C000EA4AD0 = {
 			isa = PBXGroup;
 			children = (
@@ -203,6 +215,7 @@
 		BDB1B3F62D65A4C000EA4AD0 /* NewsReaderApp */ = {
 			isa = PBXGroup;
 			children = (
+				BD91B0322D683E5C00A7109F /* ViewModels */,
 				BD15FADF2D66C610006E85C0 /* Views */,
 				BDB1B40C2D65A51D00EA4AD0 /* Resources */,
 				BDB1B40B2D65A51600EA4AD0 /* AppState */,
@@ -231,6 +244,7 @@
 		BDB1B4132D65B05A00EA4AD0 /* NewsReaderTests */ = {
 			isa = PBXGroup;
 			children = (
+				BD91B0302D683E3700A7109F /* NewsViewModelTests.swift */,
 				BDB1B4142D65B05A00EA4AD0 /* NewsReaderTests.swift */,
 			);
 			path = NewsReaderTests;
@@ -432,6 +446,7 @@
 				BDB1B3FC2D65A4C000EA4AD0 /* NewsViewController.swift in Sources */,
 				BDB1B3F82D65A4C000EA4AD0 /* AppDelegate.swift in Sources */,
 				BDB1B3FA2D65A4C000EA4AD0 /* SceneDelegate.swift in Sources */,
+				BD91B0342D683E6600A7109F /* NewsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -440,6 +455,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BDB1B4152D65B05A00EA4AD0 /* NewsReaderTests.swift in Sources */,
+				BD91B0312D683E3700A7109F /* NewsViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

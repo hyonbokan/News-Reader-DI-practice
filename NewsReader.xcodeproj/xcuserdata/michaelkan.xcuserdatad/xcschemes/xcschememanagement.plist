@@ -11,12 +11,19 @@
 		</dict>
 		<key>NewsReader.xcscheme_^#shared#^_</key>
 		<dict>
+			<key>isShown</key>
+			<true/>
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>BD15FAD52D66C597006E85C0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>BDB1B3F32D65A4C000EA4AD0</key>
 		<dict>
 			<key>primary</key>
