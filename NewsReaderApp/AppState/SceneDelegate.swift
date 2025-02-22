@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import NewsKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
@@ -18,7 +19,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let window = UIWindow(windowScene: windowScene)
         
-        let vc = NewsViewController()
+        let newsService = NewsService()
+        let viewModel = NewsViewModel(newsService: newsService)
+        let vc = NewsViewController(viewModel: viewModel)
+        
         let navVC = UINavigationController(rootViewController: vc)
         
         window.rootViewController = navVC
