@@ -25,4 +25,4 @@ jobs:
       - name: Build and Test
         run: |
           export NEWS_API_KEY=${{ secrets.NEWS_API_KEY }}
-          xcodebuild test -project NewsReader.xcodeproj -scheme NewsReader -destination 'platform=iOS Simulator,OS=17.0,name=iPhone 15 Pro'
+          xcodebuild test -project NewsReader.xcodeproj -scheme NewsReader -destination 'platform=iOS Simulator,OS=latest'
