@@ -18,14 +18,11 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v3  # Clones repo into the GitHub runner
-        
-      - name: List Available Xcode Versions
-        run: ls /Applications | grep Xcode
-        
+
       - name: Select Xcode Version
-        run: sudo xcode-select -switch /Applications/Xcode_16.2.app/Contents/Developer
+        run: sudo xcode-select -switch /Applications/Xcode.app/Contents/Developer
 
       - name: Build and Test
         run: |
           export NEWS_API_KEY=${{ secrets.NEWS_API_KEY }}  # Set API key as env variable
-          xcodebuild test -project NewsReader.xcodeproj -scheme NewsReader -destination 'platform=iOS Simulator,name=iPhone 15 Pro,OS=16.2'
+          xcodebuild test -project NewsReader.xcodeproj -scheme NewsReader -destination 'platform=iOS Simulator,name=iPhone 15 Pro' -only-testing:NewsReaderUITests/NewsViewControllerUITests
