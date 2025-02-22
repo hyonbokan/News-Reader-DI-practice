@@ -12,7 +12,7 @@ class NewsViewModel {
     
     private let newsService: NewsServiceProtocol
     
-    private var articles: [NewsArticle] = []
+    private(set) var articles: [NewsArticle] = []
     
     var onNewsUpdate: (([NewsArticle]) -> Void)?
     var onError: ((String) -> Void)?

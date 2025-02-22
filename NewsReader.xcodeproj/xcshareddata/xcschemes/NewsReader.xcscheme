@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1530"
+   LastUpgradeVersion = "1620"
    version = "1.7">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -54,6 +54,17 @@
                BlueprintIdentifier = "BD15FAD52D66C597006E85C0"
                BuildableName = "NewsKitTests.xctest"
                BlueprintName = "NewsKitTests"
+               ReferencedContainer = "container:NewsReader.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "FFD8FA382D69F93B00568F02"
+               BuildableName = "NewsReaderUITests.xctest"
+               BlueprintName = "NewsReaderUITests"
                ReferencedContainer = "container:NewsReader.xcodeproj">
             </BuildableReference>
          </TestableReference>
