@@ -23,9 +23,9 @@ jobs:
         run: xcrun simctl list devices
 
       - name: Select Xcode Version
-        run: sudo xcode-select -switch /Applications/Xcode_15.3.app/Contents/Developer
+        run: sudo xcode-select -switch /Applications/Xcode_15.4.app/Contents/Developer
 
       - name: Build and Test
         run: |
           export NEWS_API_KEY=${{ secrets.NEWS_API_KEY }}
-          xcodebuild test -project NewsReader.xcodeproj -scheme NewsReader -destination 'platform=iOS Simulator,OS=17.1.1,name=iPhone 15 Pro' -only-testing:NewsReaderUITests/NewsViewControllerUITests
+          xcodebuild test -project NewsReader.xcodeproj -scheme NewsReader -destination 'platform=iOS Simulator,OS=17.4,name=iPhone 15 Pro' -only-testing:NewsReaderUITests/NewsViewControllerUITests
