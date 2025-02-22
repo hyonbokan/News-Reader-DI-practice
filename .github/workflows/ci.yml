@@ -1,44 +1,32 @@
-name: NewsReader CI
+name: CI
 
 on:
   push:
-    branches:
-      - main  # Runs CI/CD when code is pushed to the `main` branch
+    branches: [main]
   pull_request:
-    branches:
-      - main  # Runs on pull requests to `main`
+    branches: [main]
 
 jobs:
   build:
-    runs-on: macos-14  # Uses macOS 14 (Sonoma) runner
-
-    env:
-      NEWS_API_KEY: ${{ secrets.NEWS_API_KEY }}  # Secure API Key Injection
-
+    runs-on: macos-13
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v4  # Clones repo into the GitHub runner
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-      - name: Select Xcode Version
-        run: sudo xcode-select -switch /Applications/Xcode_16.2.app/Contents/Developer
-
-      - name: Install iOS 18.2 Simulator
-        run: |
-          xcodebuild -downloadPlatform iOS
-          sudo xcodebuild -runFirstLaunch
-          sudo xcode-select -s /Applications/Xcode_16.2.app/Contents/Developer
-
-      - name: Build and Test
-        run: |
-          export NEWS_API_KEY=${{ secrets.NEWS_API_KEY }}  # Set API key as env variable
-          xcodebuild test -project NewsReader.xcodeproj \
-            -scheme NewsReader \
-            -destination 'platform=iOS Simulator,OS=18.2,name=iPhone 15 Pro' \
-            -resultBundlePath TestResults.xcresult
-
-      - name: Upload Test Results (Optional)
-        if: always()
-        uses: actions/upload-artifact@v3
+      - name: Set up Xcode 16.1
+        uses: maxim-lobanov/setup-xcode@v1
         with:
-          name: Test Results
-          path: TestResults.xcresult
+          xcode-version: '16.1'
+
+      - name: Install dependencies
+        run: |
+          # Adjust these commands based on your package manager
+          brew install swiftlint
+          # Add other dependencies as needed
+
+      - name: Build and test
+        run: |
+          xcodebuild -project NewsReader.xcodeproj \
+            -scheme NewsReader \
+            -destination 'platform=iOS Simulator,name=iPhone 14,OS=16.4' \
+            clean test
