@@ -81,8 +81,9 @@ extension NewsViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let selectedCell = viewModel.articles[indexPath.row]
-        let vc = NewsDetailViewController()
+        let selectedArticle = viewModel.articles[indexPath.row]
+        let viewModel = NewsDetailViewModel(article: selectedArticle)
+        let vc = NewsDetailViewController(viewModel: viewModel)
         navigationController?.pushViewController(vc, animated: true)
     }
 }

@@ -8,7 +8,7 @@
 import Foundation
 import NewsKit
 
-class NewsViewModel {
+final class NewsViewModel {
     
     private let newsService: NewsServiceProtocol
     
