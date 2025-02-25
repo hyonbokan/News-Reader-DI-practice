@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import NewsKit
 
 class NewsViewController: UIViewController {
     

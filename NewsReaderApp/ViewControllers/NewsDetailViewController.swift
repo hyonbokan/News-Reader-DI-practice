@@ -6,10 +6,12 @@
 //
 
 import UIKit
+import NewsKit
 
 class NewsDetailViewController: UIViewController {
     
     private let viewModel: NewsDetailViewModel
+    private let imageLoader: ImageLoaderProtocol
     
     private let titleLabel: UILabel = {
         let label = UILabel()
@@ -45,8 +47,9 @@ class NewsDetailViewController: UIViewController {
     }()
     
     
-    init(viewModel: NewsDetailViewModel) {
+    init(viewModel: NewsDetailViewModel, imageLoader: ImageLoaderProtocol = ImageLoader.shared) {
         self.viewModel = viewModel
+        self.imageLoader = imageLoader
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -93,20 +96,17 @@ class NewsDetailViewController: UIViewController {
         descriptionLabel.text = viewModel.article.description ?? "No description available"
         dateLabel.text = viewModel.formattedDate
         
-        if let imageUrl = viewModel.article.urlToImage, let url = URL(string: imageUrl) {
-            downloadImage(from: url)
-        }
-    }
-    
-    private func downloadImage(from url: URL) {
-        URLSession.shared.dataTask(with: url) { data, response, error in
-            if let data = data, let image = UIImage(data: data) {
+        if let imageUrlString = viewModel.article.urlToImage, let url = URL(string: imageUrlString) {
+            imageLoader.loadImage(from: url) { [weak self] result in
                 DispatchQueue.main.async {
-                    self.imageView.image = image
+                    switch result{
+                    case .success(let image):
+                        self?.imageView.image = image
+                    case .failure(let error):
+                        print("\(error.localizedDescription)")
+                    }
                 }
-            } else if let error = error {
-                print("Image download error: \(error.localizedDescription)")
             }
-        }.resume()
+        }
     }
 }
