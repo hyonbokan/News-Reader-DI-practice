@@ -7,6 +7,10 @@
 
 import Foundation
 
+public protocol NewsServiceProtocol {
+    func fetchTopHeadlines(completion: @escaping (Result<[NewsArticle], Error>) -> Void)
+}
+
 public class NewsService: NewsServiceProtocol {
     
     private let apiKey: String
